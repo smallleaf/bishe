@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.share1024.dao.ProjectExtDao">
+
+    <insert id="save">
+        INSERT  into project_ext(project_content)
+                VALUES (#{projectExt.projectContent})
+    </insert>
+</mapper>

@@ -1,0 +1,17 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.share1024.dao.ProjectDao">
+    <insert id="save">
+
+      <selectKey keyColumn="id" keyProperty="project.id" order="AFTER" resultType="int">
+        SELECT  LAST_INSERT_ID()
+      </selectKey>
+        INSERT  INTO project
+                  (title,category_name,rank,scan_amount,taobao_url,pic1,pic2)
+                VALUE
+                  (#{project.title},#{project.categoryName},#{project.rank},#{project.scanAmount},#{project.taobaoUrl},#{project.pic1},#{project.pic2})
+    </insert>
+
+</mapper>

@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.share1024.dao.ProjTagRelateDao">
+
+    <insert id="save">
+        INSERT INTO  proj_tag_relate (proj_id,tag_id) VALUES 
+        <foreach collection="tags" index="index" item="item" separator=",">
+            (#{projectId},#{item})
+        </foreach>
+    </insert>
+</mapper>
